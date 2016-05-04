@@ -11,7 +11,7 @@
 				</firstStatus>
 				<secondStatus>
 					<ObjectStatus text="{Type}" id="__status1"/>
-				</secondStatus>
+				</secondStatus> 
 			</ObjectHeader>
 			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select="onTabSelect">
 				<items>
