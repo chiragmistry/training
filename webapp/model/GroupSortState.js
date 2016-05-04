@@ -57,7 +57,17 @@ sap.ui.define([
 					new Sorter("RemSeats", false,
 						this._fnGroupFunction.bind(this))
 				);
-			} else if (sKey === "None") {
+			}
+			else if (sKey === "Category") {
+				// Grouping means sorting so we set the select to the same Entity used for grouping
+				this._oViewModel.setProperty("/sortBy", "Category");
+
+				aSorters.push(
+					new Sorter("Category", false,
+						this._fnGroupFunction.bind(this))
+				);
+			}
+			else if (sKey === "None") {
 				// select the default sorting again
 				this._oViewModel.setProperty("/sortBy", "ShortDesc");
 			}
