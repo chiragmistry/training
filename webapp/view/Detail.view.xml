@@ -53,22 +53,35 @@
 								<sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
 									<sap.ui.core:Title xmlns:sap.ui.core="sap.ui.core" text="Trainer Information:" id="__title1"/>
 									<Label text="Name" id="__label2"/>
-									<Input width="100%" id="__input3" value="{path: '/Trainers/FirstName' }" editable="false"/>
-									<Input width="100%" id="__input4" value="{LastName}" editable="false"/>
+									<Input width="100%" id="__input3" value="{/Trainers/FirstName}" editable="false"/>
+									<Input width="100%" id="__input4" value="{/Trainers/LastName}" editable="false"/>
 									<Label text="Title" id="__label3"/>
-									<Input width="100%" id="__input5" value="{Title}" editable="false"/></sap.ui.layout.form:content>
+									<Input width="100%" id="__input5" value="{/Trainers/Title}" editable="false"/></sap.ui.layout.form:content>
 							</sap.ui.layout.form:SimpleForm> -->
-							<Table  xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="__table0" width="auto" items="{Trainers}" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
-							    <items>
-							        <ColumnListItem counter="0" id="__item0">
-							            <cells>
-							                	<ObjectIdentifier title="{FirstName}" text="{LastName} | {Title}" id="__identifier1-lineItemsList-1"/>
-											<ObjectNumber id="__number1-lineItemsList-1"/>
-											    
-											</cells>
-							        </ColumnListItem>
-							        </items>
-							   </Table>
+							<Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList1" width="auto" items="{Trainers}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+								<headerToolbar>
+									<Toolbar id="lineItemsToolbar1">
+										<Title id="lineItemsHeader1" text="{detailView>/lineItemListTitle}"/>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column id="__column21">
+										<Text text="{i18n>detailLineItemTableIDColumn}"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right" id="__column31">
+										<Text text="{i18n>detailLineItemTableUnitNumberColumn}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem id="__item1-lineItemsList-01">
+										<cells>
+											<ObjectIdentifier title="{FirstName}" text="{LastName} | {Title}" id="__identifier1-lineItemsList-01"/>
+											<ObjectNumber id="__number1-lineItemsList-01"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+
 						</content>
 					</IconTabFilter>
 				</items>
