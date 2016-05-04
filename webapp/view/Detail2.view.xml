@@ -1,0 +1,62 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" controllerName="sap.trainings.controller.Detail">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<ObjectHeader id="objectHeader" title="{ShortDesc}" number="{ path: 'RemSeats', formatter: '.formatter.currencyValue' } Seats" intro="{Category}" numberState="Success">
+				<firstStatus>
+					<ObjectStatus text="Total Seats: {MaxSeats}" id="__status0"/>
+				</firstStatus>
+				<secondStatus>
+					<ObjectStatus text="{Type}" id="__status1"/>
+				</secondStatus>
+				<attributes>
+					<ObjectAttribute text="By {TrainerName}" active="false" id="__attribute0"/>
+					<ObjectAttribute text="On { path: 'Date', formatter: '.formatter.formatDate' }" active="false" id="__attribute1"/>
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="iconTabBarFilter2" icon="sap-icon://message-information" tooltip="{i18n>detailIconTabBarAttachments}" text="Training Info">
+						<content>
+							<Text text="{Description}"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://attachment" tooltip="{i18n>detailIconTabBarInfo}" text="Documents" count="{detailView>/lineItemListTitle}">
+						<content>
+							<Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList_copy" width="auto" items="{ path: 'toAttachments', filters: [{path: 'TrainingId', operator : 'EQ', value1:'1' } ]}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin" >
+								<headerToolbar>
+									<Toolbar id="lineItemsToolbar_copy">
+										<Title id="lineItemsHeader_copy" text="List of Files"/>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column id="__column2">
+										<Text text="{i18n>detailLineItemTableIDColumn}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem id="__item1-lineItemsList_copy-0">
+										<cells>
+											<ObjectIdentifier title="{FileName}" text="{Description}" id="__identifier1-lineItemsList_copy-0"/>
+											<ObjectNumber id="__number1-lineItemsList_copy-0"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="Trainer Bio" icon="sap-icon://person-placeholder" id="__filter0">
+						<content>
+							<Text text="{TrainerName}" maxLines="20" id="__text6"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+	<semantic:positiveAction>
+	    <semantic:PositiveAction text="Register" id="__action0" press="onRegister"/>
+	</semantic:positiveAction>
+	</semantic:DetailPage>
+</mvc:View>

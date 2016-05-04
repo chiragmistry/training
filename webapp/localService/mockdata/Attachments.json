@@ -1,0 +1,13 @@
+[{
+	"FileID": "1",
+	"FileType": "PDF",
+	"FileName": "SAP_HANA.pdf",
+	"Description": "SAP HANA ppt",
+	"TrainingId": "1"
+}, {
+	"FileID": "2",
+	"FileType": "DOC",
+	"FileName": "Hands_on.docx",
+	"Description": "Hands on",
+	"TrainingId": "1"
+}]

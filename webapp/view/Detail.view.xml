@@ -1,0 +1,81 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" controllerName="sap.trainings.controller.Detail">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<ObjectHeader id="objectHeader" title="{ShortDesc}" number="{ path: 'RemSeats', formatter: '.formatter.currencyValue' }" intro="{Category}">
+				<attributes>
+					<ObjectAttribute text="By {TrainerId}" active="false" id="__attribute0"/>
+					<ObjectAttribute text="On {Date}" active="false" id="__attribute1"/>
+				</attributes>
+				<firstStatus>
+					<ObjectStatus text="Total Seats: {MaxSeats}" id="__status0"/>
+				</firstStatus>
+				<secondStatus>
+					<ObjectStatus text="{Type}" id="__status1"/>
+				</secondStatus>
+			</ObjectHeader>
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select="onTabSelect">
+				<items>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}" text="Training Info" key="1">
+						<content>
+							<Text text="{Description}"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter2" icon="sap-icon://attachment" tooltip="{i18n>detailIconTabBarAttachments}" text="Documents" key="2">
+						<content>
+							<Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList" width="auto" items="{Attachments}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+								<headerToolbar>
+									<Toolbar id="lineItemsToolbar">
+										<Title id="lineItemsHeader" text="{detailView>/lineItemListTitle}"/>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column id="__column2">
+										<Text text="{i18n>detailLineItemTableIDColumn}"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right" id="__column3">
+										<Text text="{i18n>detailLineItemTableUnitNumberColumn}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem id="__item1-lineItemsList-0">
+										<cells>
+											<ObjectIdentifier title="{FileName}" text="{FileType} | {Description}" id="__identifier1-lineItemsList-0"/>
+											<ObjectNumber id="__number1-lineItemsList-0"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter3" icon="sap-icon://person-placeholder" tooltip="{i18n>detailIconTabBarInfo}" text="Trainer Bio" key="3">
+						<content>
+							<!--<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="false" layout="ResponsiveGridLayout" id="__form1">
+								<sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
+									<sap.ui.core:Title xmlns:sap.ui.core="sap.ui.core" text="Trainer Information:" id="__title1"/>
+									<Label text="Name" id="__label2"/>
+									<Input width="100%" id="__input3" value="{path: '/Trainers/FirstName' }" editable="false"/>
+									<Input width="100%" id="__input4" value="{LastName}" editable="false"/>
+									<Label text="Title" id="__label3"/>
+									<Input width="100%" id="__input5" value="{Title}" editable="false"/></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm> -->
+							<Table  xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="__table0" width="auto" items="{Trainers}" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+							    <items>
+							        <ColumnListItem counter="0" id="__item0">
+							            <cells>
+							                	<ObjectIdentifier title="{FirstName}" text="{LastName} | {Title}" id="__identifier1-lineItemsList-1"/>
+											<ObjectNumber id="__number1-lineItemsList-1"/>
+											    
+											</cells>
+							        </ColumnListItem>
+							        </items>
+							   </Table>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+	</semantic:DetailPage>
+</mvc:View>
