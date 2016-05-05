@@ -11,13 +11,9 @@
 				</firstStatus>
 				<secondStatus> 
 					<ObjectStatus text="{Type}" id="__status1"/>
-<<<<<<< HEAD
 				</secondStatus>
 			</ObjectHeader>
-=======
-				</secondStatus> 
-			</ObjectHeader> 
->>>>>>> branch 'master' of https://github.com/chiragmistry/training
+ 
 			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select="onTabSelect">
 				<items>
 					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}" text="Training Info" key="1">
