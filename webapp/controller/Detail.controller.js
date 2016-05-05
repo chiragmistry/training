@@ -29,8 +29,6 @@ sap.ui.define([
 				this.setModel(oViewModel, "detailView");
 
 				this.getOwnerComponent().getModel().metadataLoaded().then(this._onMetadataLoaded.bind(this));
-				
-				
 			},
 
 			/* =========================================================== */
@@ -71,6 +69,12 @@ sap.ui.define([
 						sTitle = this.getResourceBundle().getText("detailLineItemTableHeading");
 					}
 					oViewModel.setProperty("/lineItemListTitle", sTitle);
+					oViewModel.setProperty("/attachmentCount", iTotalItems);
+				}
+				
+				if (this.byId("__table0").getBinding("items").isLengthFinal()) {
+					
+					oViewModel.setProperty("/participantCount", iTotalItems);
 				}
 			},
 
@@ -187,14 +191,6 @@ sap.ui.define([
 				oViewModel.setProperty("/busy", true);
 				// Restore original busy indicator delay for the detail view
 				oViewModel.setProperty("/delay", iOriginalViewBusyDelay);
-			},
-			
-			onTabSelect: function (oEvent) {
-			    var oKey = oEvent.getParameters("key").key;
-			    if ( oKey === "3")
-			    {
-			        
-			    }
 			}
 
 		});

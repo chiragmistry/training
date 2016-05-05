@@ -3,11 +3,39 @@
 	"FileType": "PDF",
 	"FileName": "SAP_HANA.pdf",
 	"Description": "SAP HANA ppt",
-	"TrainingId": "1"
+	"TrainingId": "1",
+	"__metadata": {
+		"uri": "Attachments(FileID='1',TrainingId='1')",
+		"type": "p132695trial.dev.training.serv2.AttachmentsType"
+	}
 }, {
 	"FileID": "2",
 	"FileType": "DOC",
 	"FileName": "Hands_on.docx",
 	"Description": "Hands on",
-	"TrainingId": "1"
+	"TrainingId": "1",
+	"__metadata": {
+		"uri": "Attachments(FileID='2',TrainingId='1')",
+		"type": "p132695trial.dev.training.serv2.AttachmentsType"
+	}
+}, {
+	"Description": "SAP Fiori",
+	"FileID": "1",
+	"FileType": "PDF",
+	"FileName": "SAP_Fiori.pdf",
+	"TrainingId": "2",
+	"__metadata": {
+		"uri": "Attachments(FileID='1',TrainingId='2')",
+		"type": "p132695trial.dev.training.serv2.AttachmentsType"
+	}
+}, {
+	"FileID": "1",
+	"FileType": "PDF",
+	"FileName": "Effective_Meetings.pdf",
+	"Description": "Effective Meetings PPT",
+	"TrainingId": "3",
+	"__metadata": {
+		"uri": "Attachments(FileID='1',TrainingId='3')",
+		"type": "p132695trial.dev.training.serv2.AttachmentsType"
+	}
 }]

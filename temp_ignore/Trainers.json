@@ -1,5 +1,5 @@
 [{
-	"TrainerId": "1",
+	"TrainerId": "1", 
 	"Title": "Sr Principal Consultant",
 	"FirstName": "Training",
 	"LastName": "Buddha",
@@ -10,12 +10,7 @@
 	"Twitter": "@trainingbuddha",
 	"Facebook": "trainingbuddha",
 	"LinkedIn": "trainingbuddha",
-	"Rating": 5,
-	
-	"__metadata": {
-		"uri": "Trainers(TrainerId='1',TrainingId='1')",
-		"type": "p132695trial.dev.training.serv2.TrainersType"
-	}
+	"Rating": 5
 }, {
 	"TrainerId": "2",
 	"Title": "Associate Consultant",
@@ -28,10 +23,5 @@
 	"Facebook": "trainingbuddha",
 	"LinkedIn": "trainingbuddha",
 	"Rating": 4,
-	"TrainingId": "2",
-	"__metadata": {
-		"uri": "Trainers(TrainerId='2',TrainingId='2')",
-		"type": "p132695trial.dev.training.serv2.TrainersType"
-	}
-
+	"TrainingId": "2"
 }]

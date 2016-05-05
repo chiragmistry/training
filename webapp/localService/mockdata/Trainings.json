@@ -9,5 +9,87 @@
 	"TrainingId": "1",
 	"TrainerId": "1",
 	"Rating": 5,
-	"TrainerName": "Training Buddha"
+	"TrainerName": "Training Buddha",
+			"__metadata": {
+		"uri": "Trainings('1')",
+		"type": "p132695trial.dev.training.serv2.TrainingsType"
+	},
+	"Attachments": {
+		"__deferred": {
+			"uri": "Trainings('1')/Attachments"
+		}
+	},
+	"Trainers": {
+		"__deferred": {
+			"uri": "Trainings('1')/Trainers"
+		}
+	},
+	"Participants": {
+		"__deferred": {
+			"uri": "Trainings('1')/Participants"
+		}
+	}
+}, {
+	"Category": "SAP",
+	"Type": "Online",
+	"Date": "/Date(1462766400000)/",
+	"ShortDesc": "SAP Fiori",
+	"Description": "SAP Fiori Description",
+	"MaxSeats": 25,
+	"RemSeats": 15,
+	"TrainingId": "2",
+	"TrainerId": "2",
+	"Rating": 5,
+	"TrainerName": "Fiori Trainer",
+			"__metadata": {
+		"uri": "Trainings('2')",
+		"type": "p132695trial.dev.training.serv2.TrainingsType"
+	},
+	"Attachments": {
+		"__deferred": {
+			"uri": "Trainings('2')/Attachments"
+		}
+	},
+	"Trainers": {
+		"__deferred": {
+			"uri": "Trainings('2')/Trainers"
+		}
+	},
+	"Participants": {
+		"__deferred": {
+			"uri": "Trainings('2')/Participants"
+		}
+	}
+}, {
+	"Category": "Personality Development",
+	"Type": "Online",
+	"Date": "/Date(1462939200000)/",
+	"ShortDesc": "Effective Meetings",
+	"Description": "Effective Meetings Description",
+	"MaxSeats": 10,
+	"RemSeats": 3,
+	"TrainingId": "3",
+	"TrainerId": "1",
+	"Rating": 5,
+	"TrainerName": "Training Buddha",
+		"__metadata": {
+		"uri": "Trainings('3')",
+		"type": "p132695trial.dev.training.serv2.TrainingsType"
+	},
+	"Attachments": {
+		"__deferred": {
+			"uri": "Trainings('3')/Attachments"
+		}
+	},
+	"Trainers": {
+		"__deferred": {
+			"uri": "Trainings('3')/Trainers"
+		}
+	},
+	"Participants": {
+		"__deferred": {
+			"uri": "Trainings('3')/Participants"
+		}
+	}
+
 }]

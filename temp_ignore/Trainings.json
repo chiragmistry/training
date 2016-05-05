@@ -1,0 +1,37 @@
+[{
+	"Category": "SAP",
+	"Type": "Online",
+	"Date": "/Date(1463486400000)/",
+	"ShortDesc": "SAP HANA Intro",
+	"Description": "SAP HANA Intro Description",
+	"MaxSeats": 20,
+	"RemSeats": 12,
+	"TrainingId": "1",
+	"TrainerId": "1",
+	"Rating": 5,
+	"TrainerName": "Training Buddha"
+}, {
+	"Category": "SAP",
+	"Type": "Online",
+	"Date": "/Date(1462766400000)/",
+	"ShortDesc": "SAP Fiori",
+	"Description": "SAP Fiori Description",
+	"MaxSeats": 25,
+	"RemSeats": 15,
+	"TrainingId": "2",
+	"TrainerId": "2",
+	"Rating": 5,
+	"TrainerName": "Fiori Trainer"
+}, {
+	"Category": "Personality Development",
+	"Type": "Online",
+	"Date": "/Date(1462939200000)/",
+	"ShortDesc": "Effective Meetings",
+	"Description": "Effective Meetings Description",
+	"MaxSeats": 10,
+	"RemSeats": 3,
+	"TrainingId": "3",
+	"TrainerId": "1",
+	"Rating": 5,
+	"TrainerName": "Training Buddha"
+}]

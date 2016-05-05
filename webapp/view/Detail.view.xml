@@ -4,20 +4,16 @@
 			<ObjectHeader id="objectHeader" title="{ShortDesc}" number="{ path: 'RemSeats', formatter: '.formatter.currencyValue' }" intro="{Category}">
 				<attributes> 
 					<ObjectAttribute text="By {TrainerId}" active="false" id="__attribute0"/>
-					<ObjectAttribute text="On {Date}" active="false" id="__attribute1"/>
+					<ObjectAttribute text="On { path: 'Date', formatter: '.formatter.formatDate'}" active="false" id="__attribute1"/>
 				</attributes>
 				<firstStatus>
 					<ObjectStatus text="Total Seats: {MaxSeats}" id="__status0"/>
 				</firstStatus>
 				<secondStatus> 
 					<ObjectStatus text="{Type}" id="__status1"/>
-<<<<<<< HEAD
 				</secondStatus>
 			</ObjectHeader>
-=======
-				</secondStatus> 
-			</ObjectHeader> 
->>>>>>> branch 'master' of https://github.com/chiragmistry/training
+ 
 			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select="onTabSelect">
 				<items>
 					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}" text="Training Info" key="1">
@@ -25,7 +21,7 @@
 							<Text text="{Description}"/>
 						</content>
 					</IconTabFilter>  
-					<IconTabFilter id="iconTabBarFilter2" icon="sap-icon://attachment" tooltip="{i18n>detailIconTabBarAttachments}" text="Documents" key="2">
+					<IconTabFilter id="iconTabBarFilter2" count="{detailView>/attachmentCount}" icon="sap-icon://attachment" tooltip="{i18n>detailIconTabBarAttachments}" text="Documents" key="2">
 						<content>
 							<Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList" width="auto" items="{Attachments}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 								<headerToolbar>
@@ -54,16 +50,16 @@
 					</IconTabFilter>
 					<IconTabFilter id="iconTabBarFilter3" icon="sap-icon://person-placeholder" tooltip="{i18n>detailIconTabBarInfo}" text="Trainer Bio" key="3">
 						<content>
-							<!--<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="false" layout="ResponsiveGridLayout" id="__form1">
+							<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="false" layout="ResponsiveGridLayout" id="__form1">
 								<sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
 									<sap.ui.core:Title xmlns:sap.ui.core="sap.ui.core" text="Trainer Information:" id="__title1"/>
-									<Label text="Name" id="__label2"/>
+									<Label text="Name" id="__label21"/>
 									<Input width="100%" id="__input3" value="{/Trainers/FirstName}" editable="false"/>
 									<Input width="100%" id="__input4" value="{/Trainers/LastName}" editable="false"/>
 									<Label text="Title" id="__label3"/>
 									<Input width="100%" id="__input5" value="{/Trainers/Title}" editable="false"/></sap.ui.layout.form:content>
-							</sap.ui.layout.form:SimpleForm> -->
-							<Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList1" width="auto" items="{Trainers}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+							</sap.ui.layout.form:SimpleForm> 
+							<!-- <Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList1" width="auto" items="{Trainers}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 								<headerToolbar>
 									<Toolbar id="lineItemsToolbar1">
 										<Title id="lineItemsHeader1" text="{detailView>/lineItemListTitle}"/>
@@ -81,8 +77,8 @@
 									<ColumnListItem id="__item1-lineItemsList-01">
 										<cells>
 										<ObjectIdentifier title="{FirstName}" text="{LastName} | {Title}" id="__identifier1-lineItemsList-01"/>
-											<ObjectNumber id="__number1-lineItemsList-01"/>
-										<!--
+											<ObjectNumber id="__number1-lineItemsList-01"/> 
+										
 											<sap.ui.layout.form:SimpleForm editable="false" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="__form0">
 											    <sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
 											        <sap.ui.core:Title xmlns:sap.ui.core="sap.ui.core" text="Trainer Information" id="__title0"/>
@@ -91,16 +87,16 @@
 											        <Input width="100%" id="__input1"  text="{LastName}"/>
 											        <Label text="Title" id="__label4"/>
 											        <Input width="100%" id="__input2"  text="{Title}"/></sap.ui.layout.form:content>
-											</sap.ui.layout.form:SimpleForm> -->
+											</sap.ui.layout.form:SimpleForm> 
 										</cells>
 									</ColumnListItem>
 								</items>
-							</Table>
+							</Table> -->
 						</content>
 					</IconTabFilter>
-					<IconTabFilter text="Participants" count="" icon="sap-icon://list" id="__filter0">
+					<IconTabFilter text="Participants" count="{detailView>/participantCount}" icon="sap-icon://list" id="__filter0">
 						<content>
-							<Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{Participants}">
+							<Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{Participants}" updateFinished="onListUpdateFinished" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 								<items>
 									<ColumnListItem counter="0" id="__item0">
 										<cells>
