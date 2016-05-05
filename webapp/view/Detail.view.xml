@@ -2,7 +2,7 @@
 	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
 		<semantic:content>
 			<ObjectHeader id="objectHeader" title="{ShortDesc}" number="{ path: 'RemSeats', formatter: '.formatter.currencyValue' }" intro="{Category}">
-				<attributes>
+				<attributes> 
 					<ObjectAttribute text="By {TrainerId}" active="false" id="__attribute0"/>
 					<ObjectAttribute text="On {Date}" active="false" id="__attribute1"/>
 				</attributes>
@@ -11,15 +11,20 @@
 				</firstStatus>
 				<secondStatus> 
 					<ObjectStatus text="{Type}" id="__status1"/>
+<<<<<<< HEAD
+				</secondStatus>
+			</ObjectHeader>
+=======
 				</secondStatus> 
 			</ObjectHeader> 
+>>>>>>> branch 'master' of https://github.com/chiragmistry/training
 			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select="onTabSelect">
 				<items>
 					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}" text="Training Info" key="1">
 						<content>
 							<Text text="{Description}"/>
 						</content>
-					</IconTabFilter>
+					</IconTabFilter>  
 					<IconTabFilter id="iconTabBarFilter2" icon="sap-icon://attachment" tooltip="{i18n>detailIconTabBarAttachments}" text="Documents" key="2">
 						<content>
 							<Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList" width="auto" items="{Attachments}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
@@ -75,13 +80,54 @@
 								<items>
 									<ColumnListItem id="__item1-lineItemsList-01">
 										<cells>
-											<ObjectIdentifier title="{FirstName}" text="{LastName} | {Title}" id="__identifier1-lineItemsList-01"/>
+										<ObjectIdentifier title="{FirstName}" text="{LastName} | {Title}" id="__identifier1-lineItemsList-01"/>
 											<ObjectNumber id="__number1-lineItemsList-01"/>
+										<!--
+											<sap.ui.layout.form:SimpleForm editable="false" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="__form0">
+											    <sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
+											        <sap.ui.core:Title xmlns:sap.ui.core="sap.ui.core" text="Trainer Information" id="__title0"/>
+											        <Label text="Name" id="__label3"/>
+											        <Input width="100%" id="__input0"  text="{FirstName}"/>
+											        <Input width="100%" id="__input1"  text="{LastName}"/>
+											        <Label text="Title" id="__label4"/>
+											        <Input width="100%" id="__input2"  text="{Title}"/></sap.ui.layout.form:content>
+											</sap.ui.layout.form:SimpleForm> -->
 										</cells>
 									</ColumnListItem>
 								</items>
 							</Table>
-
+						</content>
+					</IconTabFilter>
+					<IconTabFilter text="Participants" count="" icon="sap-icon://list" id="__filter0">
+						<content>
+							<Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{Participants}">
+								<items>
+									<ColumnListItem counter="0" id="__item0">
+										<cells>
+											<Text id="text_id0" text="{FirstName}"/>
+											<Text id="text_id1" text="{LastName}"/>
+											<Text id="text_id2" text="{Title}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column id="__column0">
+										<header>
+											<Label text="First Name" id="__label0"/>
+										</header>
+									</Column>
+									<Column id="__column1">
+										<header>
+											<Label text="Last Name" id="__label1"/>
+										</header>
+									</Column>
+									<Column id="__column4">
+										<header>
+											<Label text="Title" id="__label2"/>
+										</header>
+									</Column>
+								</columns>
+							</Table>
 						</content>
 					</IconTabFilter>
 				</items>
