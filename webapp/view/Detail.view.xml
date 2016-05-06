@@ -1,6 +1,6 @@
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" controllerName="sap.trainings.controller.Detail">
 	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
-		<semantic:content>
+		<semantic:content> 
 			<ObjectHeader id="objectHeader" title="{ShortDesc}" number="{ path: 'RemSeats', formatter: '.formatter.currencyValue' }" intro="{Category}">
 				<attributes> 
 					<ObjectAttribute text="By {TrainerId}" active="false" id="__attribute0"/>
@@ -132,5 +132,8 @@
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
 		</semantic:sendEmailAction>
+	<semantic:positiveAction>
+	    <semantic:PositiveAction text="Register" id="__action0" press="onRegister"/>
+	</semantic:positiveAction>
 	</semantic:DetailPage>
 </mvc:View>
