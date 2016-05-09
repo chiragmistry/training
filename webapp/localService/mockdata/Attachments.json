@@ -4,6 +4,7 @@
 	"FileName": "SAP_HANA.pdf",
 	"Description": "SAP HANA ppt",
 	"TrainingId": "1",
+	"Source" : "/attachments/SAP_HANA.pdf",
 	"__metadata": {
 		"uri": "Attachments(FileID='1',TrainingId='1')",
 		"type": "p132695trial.dev.training.serv2.AttachmentsType"

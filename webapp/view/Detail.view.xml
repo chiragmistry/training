@@ -1,16 +1,16 @@
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" controllerName="sap.trainings.controller.Detail">
 	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
-		<semantic:content> 
-			<ObjectHeader id="objectHeader" title="{ShortDesc}" number="{ path: 'RemSeats', formatter: '.formatter.currencyValue' }" intro="{Category}">
+		<semantic:content>
+			<ObjectHeader id="objectHeader" title="{ShortDesc}" number="{ path: 'RemSeats', formatter: '.formatter.currencyValue' } Seats" intro="{Category}" numberState="Success"   >
 				<attributes> 
-					<ObjectAttribute text="By {TrainerId}" active="false" id="__attribute0"/>
+					<ObjectAttribute text="By {TrainerName}" active="false" id="__attribute0"/>
 					<ObjectAttribute text="On { path: 'Date', formatter: '.formatter.formatDate'}" active="false" id="__attribute1"/>
 				</attributes>
 				<firstStatus>
 					<ObjectStatus text="Total Seats: {MaxSeats}" id="__status0"/>
 				</firstStatus>
 				<secondStatus> 
-					<ObjectStatus text="{Type}" id="__status1"/>
+					<ObjectStatus text="{Type}" id="__status1" state="Success"/>
 				</secondStatus>
 			</ObjectHeader>
  
@@ -18,11 +18,22 @@
 				<items>
 					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}" text="Training Info" key="1">
 						<content>
+<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="false" layout="ResponsiveGridLayout" id="__form2">
+								<sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
+								
+						    <Label text="Conference Details" />
+						    <Text text="{cust1}" />
+						    <Text text=" " />
+						    <Label text="Training Topics" />
 							<Text text="{Description}"/>
+							
+								</sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm> 
 						</content>
 					</IconTabFilter>  
 					<IconTabFilter id="iconTabBarFilter2" count="{detailView>/attachmentCount}" icon="sap-icon://attachment" tooltip="{i18n>detailIconTabBarAttachments}" text="Documents" key="2">
 						<content>
+							<!--
 							<Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList" width="auto" items="{Attachments}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 								<headerToolbar>
 									<Toolbar id="lineItemsToolbar">
@@ -45,7 +56,32 @@
 										</cells>
 									</ColumnListItem>
 								</items>
-							</Table>
+							</Table> -->
+							
+							<UploadCollection id="UploadCollection" maximumFilenameLength="55" maximumFileSize="10" multiple="true" showSeparators="All"
+								items="{path : 'Attachments', templateShareable : 'true'}" numberOfAttachmentsText="{detailView>/lineItemListTitle}" mode="MultiSelect"
+								selectionChange="onSelectionChange"
+								>
+								<toolbar>
+									<OverflowToolbar id="myId">
+										<Title id="attachmentTitle"/>
+										<ToolbarSpacer/>
+										<Button id="downloadButton" text="Download" press="onDownloadItem" enabled="false" type="Transparent"></Button>
+										<UploadCollectionToolbarPlaceholder></UploadCollectionToolbarPlaceholder>
+									</OverflowToolbar>
+								</toolbar>
+								<items>
+									<UploadCollectionItem documentId="{FileId}" fileName="{FileName}" mimeType="{FileType}" thumbnailUrl="" url="{Source}" enableEdit="false"
+										enableDelete="false" visibleDelete="false" visibleEdit="false" selected="{selected}">
+										<attributes>
+											<ObjectAttribute title="" text="{FileName}"/>
+											<ObjectAttribute title="" text="{Description}"/>
+											<ObjectAttribute title="" text="{FileType}"/>
+										</attributes>
+									</UploadCollectionItem>
+								</items>
+							</UploadCollection>
+							
 						</content>
 					</IconTabFilter>
 					<IconTabFilter id="iconTabBarFilter3" icon="sap-icon://person-placeholder" tooltip="{i18n>detailIconTabBarInfo}" text="Trainer Bio" key="3">
@@ -54,10 +90,26 @@
 								<sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
 									<sap.ui.core:Title xmlns:sap.ui.core="sap.ui.core" text="Trainer Information:" id="__title1"/>
 									<Label text="Name" id="__label21"/>
-									<Input width="100%" id="__input3" value="{/Trainers/FirstName}" editable="false"/>
-									<Input width="100%" id="__input4" value="{/Trainers/LastName}" editable="false"/>
+									<Text width="100%" id="__input3" text="{FirstName}, {LastName}"/>
 									<Label text="Title" id="__label3"/>
-									<Input width="100%" id="__input5" value="{/Trainers/Title}" editable="false"/></sap.ui.layout.form:content>
+									<Text width="100%" id="text_001" text="{Title}"/>
+									<Label text="Email" id="__label22"/>
+									<Text width="100%" id="__text22" text="{Email}"/>
+									<Label text="Phone" id="__label23"/>
+									<Text width="100%" id="__text23" text="{Phone}"/>
+									<Label text="Twitter" id="__label24"/>
+									<Text width="100%" id="__text24" text="{Twitter}"/>
+									<Label text="Facebook" id="__label25"/>
+									<Text width="100%" id="__text25" text="{Facebook}"/>	
+									<Label text="LinkedIn" id="__label26"/>
+									<Text width="100%" id="__text26" text="{LinkedIn}"/>		
+									<Label text="Rating" id="__label28"/>
+									<RatingIndicator id="__indicator0" value="{Rating}"/>
+									<Label text="Bio" id="__label27"/>
+									<Text width="100%" id="__text27" text="{Bio}"/>
+
+									
+									</sap.ui.layout.form:content>
 							</sap.ui.layout.form:SimpleForm> 
 							<!-- <Table xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" id="lineItemsList1" width="auto" items="{Trainers}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
 								<headerToolbar>
