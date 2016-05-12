@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons">
+	<Dialog id="RegisterDialog" title="Registration" type="Message" contentWidth="1em">
+		<content>
+		    <VBox>
+ 
+	        <sap.ui.layout.form:SimpleForm editable="false" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" id="__form0">      
+	            <sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">      
+	                <core:Title text="Participant Information" id="__title2"/>      
+	                <Label text="Name" id="__label7"/>      
+	                <Input width="100%" id="__input7"/>      
+	                <Input width="100%" id="__input8"/>      
+	                <Label text="Email" id="__label8"/>      
+	                <Input width="100%" id="__input9"/>
+	                    <Label text="Title" id="__label10"/>      
+	                <Input width="100%" id="__input10"/>
+	                </sap.ui.layout.form:content>      
+	        </sap.ui.layout.form:SimpleForm>
+			<items/>
+			</VBox>
+		</content>
+		
+		<beginButton>  
+         <Button type="Accept" text="Submit" press="onRegisterSubmit"/>  
+      </beginButton>  
+      <endButton>  
+         <Button type="Reject" text="Cancel" press="onRegisterCancel"/>  
+      </endButton>  
+      
+	</Dialog>
+</core:FragmentDefinition>

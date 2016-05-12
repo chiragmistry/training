@@ -22,7 +22,7 @@
 				<items>
 					<ObjectListItem type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}" press="onSelectionChange" title="{ShortDesc}" number="{         path: 'RemSeats',         formatter: '.formatter.currencyValue'        } Seats" intro="{Category}" numberState="Success">
 					<attributes>
-					    <ObjectAttribute text="By { path: 'TrainerId' }" active="false" id="__attribute0"/>
+					    <ObjectAttribute text="By { path: 'TrainerName' }" active="false" id="__attribute0"/>
 					    <ObjectAttribute text="On { path: 'Date', formatter: '.formatter.formatDate'}" active="false" id="__attribute1"/>
 					</attributes>
 					</ObjectListItem>

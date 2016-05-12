@@ -37,6 +37,22 @@ sap.ui.define([
 						text: sText
 					};
 				};
+			},
+			groupCategory : function(){
+			    return function (oContext) {
+				var sKey,
+					sText,
+					iCat = oContext.getProperty("Category");
+
+                    sKey = iCat;
+				// 	sText = _oResourceBundle.getText("masterGroup2Header") + iCat;
+					sText = "Group by Category: " + iCat;
+
+					return {
+						key: sKey,
+						text: sText
+					};
+				};
 			}
 
 		};

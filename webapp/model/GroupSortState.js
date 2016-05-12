@@ -1,7 +1,8 @@
 sap.ui.define([
 		"sap/ui/base/Object",
-		"sap/ui/model/Sorter"
-	], function (BaseObject, Sorter) {
+		"sap/ui/model/Sorter",
+		"sap/trainings/model/grouper"
+	], function (BaseObject, Sorter, Grouper) {
 	"use strict";
 
 	return BaseObject.extend("sap.trainings.model.GroupSortState", {
@@ -17,9 +18,10 @@ sap.ui.define([
 		 * @param {function} fnGroupFunction the grouping function to be applied
 		 * @alias sap.trainings.model.GroupSortState
 		 */
-		constructor: function (oViewModel, fnGroupFunction) {
+			constructor: function (oViewModel, fnGroupFunction, fnGF) {
 			this._oViewModel = oViewModel;
 			this._fnGroupFunction = fnGroupFunction;
+			this._fnGF = fnGF;
 		},
 
 		/**
@@ -63,8 +65,7 @@ sap.ui.define([
 				this._oViewModel.setProperty("/sortBy", "Category");
 
 				aSorters.push(
-					new Sorter("Category", false,
-						this._fnGroupFunction.bind(this))
+    			        new Sorter("Category", false, Grouper.groupCategory())
 				);
 			}
 			else if (sKey === "None") {
