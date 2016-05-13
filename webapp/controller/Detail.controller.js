@@ -230,7 +230,7 @@ sap.ui.define([
                         return;
 						}
                     
-                    	if ( oObject.Date >=  oDate ) {
+                    	if ( (( oObject.Date -  oDate )/( 1000*60*60*24 )) < 0 ) {
 						    
 						sap.m.MessageToast.show('Sorry! Registration has been closed for this training!');
                         return;
