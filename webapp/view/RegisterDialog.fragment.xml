@@ -6,13 +6,13 @@
 	        <sap.ui.layout.form:SimpleForm editable="false" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" id="__form0">      
 	            <sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">      
 	                <core:Title text="Participant Information" id="__title2"/>      
-	                <Label text="Name" id="__label7"/>      
-	                <Input width="100%" id="__input7"/>      
-	                <Input width="100%" id="__input8"/>      
-	                <Label text="Email" id="__label8"/>      
-	                <Input width="100%" id="__input9"/>
-	                    <Label text="Title" id="__label10"/>      
-	                <Input width="100%" id="__input10"/>
+	                <Label text="Name" id="__label7" required="true" />      
+	                <Input width="100%" id="__input7" placeholder="First Name" liveChange="validateInput"/>      
+	                <Input width="100%" id="__input8" placeholder="Last Name" liveChange="validateInput"/>      
+	                <Label text="Email" id="__label8" required="true"/>      
+	                <Input width="100%" id="__input9" placeholder="Email" liveChange="validateInput"/>
+	                    <Label text="Title" id="__label10" required="true"/>      
+	                <Input width="100%" id="__input10" placeholder="E.g. Sr Principal Consultant" liveChange="validateInput"/>
 	                </sap.ui.layout.form:content>      
 	        </sap.ui.layout.form:SimpleForm>
 			<items/>
